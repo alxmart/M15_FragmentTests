@@ -15,11 +15,14 @@ class ConversasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //return super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(
-           R.layout.fragment_conversas,
-           container,
-           false
+
+        val view = inflater.inflate(
+            R.layout.fragment_conversas,
+            container,
+            false
         )
+        return  view
+
     }
 
 
