@@ -22,7 +22,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_conversas"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_chamadas"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
