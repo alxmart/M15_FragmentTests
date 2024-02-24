@@ -6,10 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.luizafmartinez.m15_fragmenttests.R
 
+//class ConversasFragment : Fragment( R.layout.fragment_conversas) {
 class ConversasFragment : Fragment() {
+
+    private lateinit var btnExecutar: Button
+    private lateinit var editNome: EditText
+    private lateinit var textNome: TextView
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -21,23 +29,29 @@ class ConversasFragment : Fragment() {
         Log.i("Ciclo_Vida", "Fragment onCreateAttach")
     }
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         Log.i("Ciclo_Vida", "Fragment onCreateView")
-
         //return super.onCreateView(inflater, container, savedInstanceState)
-
         val view = inflater.inflate(
             R.layout.fragment_conversas,
             container,
             false
         )
+
+        btnExecutar = view.findViewById(R.id.btn_executar) //Precisa de view.
+        editNome = view.findViewById(R.id.edit_nome)
+        textNome = view.findViewById(R.id.text_nome)
+
+        btnExecutar.setOnClickListener {
+
+            val nome = editNome.text.toString()
+            textNome.text = nome
+        }
+
         return  view
     }
 
