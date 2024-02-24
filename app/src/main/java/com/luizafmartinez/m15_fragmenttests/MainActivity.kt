@@ -23,10 +23,13 @@ class MainActivity : AppCompatActivity() {
         fragmentManager.add( R.id.fragment_conteudo, ConversasFragment() )
         fragmentManager.commit()*/
 
+        //Para remover um fragment:
+        val conversasFragment = ConversasFragment()
+
         btnConversas.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace( R.id.fragment_conteudo, ConversasFragment() )
+                .replace( R.id.fragment_conteudo, conversasFragment )
                 .commit()
         }
 
@@ -34,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .replace( R.id.fragment_conteudo, ChamadasFragment() )
+                // Para remover:
+                // .remove ( conversasFragment)
                 .commit()
         }
     }
